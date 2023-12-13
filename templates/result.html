@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eksikler</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+        h1 {
+            color: #00ffcc;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            padding: 8px 0;
+        }
+        /* Dark Mode Bootstrap'den gelen stiller */
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            border-radius: 0.25rem;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #444;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .card-body {
+            padding: 1.25rem;
+        }
+        .card-title {
+            color: #f3f3f3;
+            margin-bottom: 0.75rem;
+        }
+        .list-group-item {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Eksikler:</h1>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="eksiklerListesi">
+                    {% for eksik in eksikler %}
+                        <li class="list-group-item">{{ eksik }}</li>
+                    {% endfor %}
+                </ul>
+                <button class="btn btn-primary mt-3" onclick="kopyalaListeyi()">Listeyi Kopyala</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS ve jQuery -->
+    <!-- ... -->
+    <script>
+        function kopyalaListeyi() {
+            var listeMetni = document.getElementById('eksiklerListesi').innerText.trim();
+            navigator.clipboard.writeText(listeMetni)
+                .then(() => {
+                    alert('Liste kopyalandı!');
+                })
+                .catch(err => {
+                    console.error('Kopyalama başarısız:', err);
+                });
+        }
+    </script>
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

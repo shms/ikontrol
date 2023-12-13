@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Post Kontrol</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Dark Mode ve diğer stillendirme */
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+        label {
+            color: #e8e8e8;
+            margin-top: 10px;
+        }
+        textarea,
+        input[type="text"] {
+            background-color: #333; /* Güncellenmiş arka plan rengi */
+            color: #fff; /* Yazı rengi */
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #dcdcdc;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+        }
+        #izinliler , #grup_uye , #post_linki{
+            background-color: #333;
+            color: #e3e3e3;
+            border-color: #a5a5a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="post_link">İnstagram Post Linki:</label>
+                <input type="text" id="post_link" name="post_link" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="grup_uye">Grup Üye Listesi:</label>
+                <textarea id="grup_uye" name="grup_uye" rows="4" cols="50" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="izinliler">İzin isteyenler Listesi:</label>
+                <textarea id="izinliler" name="izinliler" rows="4" cols="50" class="form-control"></textarea>
+            </div>
+            <input type="submit" value="Gönder" class="btn btn-primary">
+        </form>
+    </div>
+
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

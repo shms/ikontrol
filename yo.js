@@ -33052,7 +33052,7 @@
                     if ("success" == e.status)
                         return location.reload(),
                         !1;
-                    "error" == e.status && ($("#refill_loader").hide(),
+                    "error" !== e.status && ($("#refill_loader").hide(),
                     $("#refill_body").html(e.error))
                 }
                 ))
